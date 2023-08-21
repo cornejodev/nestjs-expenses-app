@@ -16,7 +16,7 @@ export const db: Data = {
                 {
                         id: 'uuid3',
                         source: 'salary',
-                        amount: 40000,
+                        amount: 4000,
                         created_at: new Date(),
                         updated_at: new Date(),
                         type: ReportType.INCOME,
@@ -24,7 +24,7 @@ export const db: Data = {
                 {
                         id: 'uuid2',
                         source: 'salary',
-                        amount: 7500,
+                        amount: 500,
                         created_at: new Date(),
                         updated_at: new Date(),
                         type: ReportType.EXPENSE,

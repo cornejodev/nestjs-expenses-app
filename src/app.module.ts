@@ -1,13 +1,19 @@
 import { ClassSerializerInterceptor, Module } from '@nestjs/common';
 import { APP_INTERCEPTOR } from '@nestjs/core';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { ReportController } from './report/report.controller';
+import { ReportModule } from './report/report.module';
+import { ReportService } from './report/report.service';
+import { SummaryController } from './summary/summary.controller';
+import { SummaryModule } from './summary/summary.module';
+import { SummaryService } from './summary/summary.service';
 
 @Module({
-        imports: [],
-        controllers: [AppController],
+        imports: [SummaryModule, ReportModule],
+        controllers: [SummaryController, ReportController],
         providers: [
-                AppService,
+                ReportService,
+                SummaryService,
+                //global provider
                 {
                         //interceptors are basically the same as middleware but in Nestjs
                         // we provide a built in interceptor here
